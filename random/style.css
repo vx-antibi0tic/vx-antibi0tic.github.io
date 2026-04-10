@@ -25,8 +25,3 @@ pre {
 x { color: #93f1ff; } /* blue - complimentary to <a> tag for highlighting */
 hl { color: white; background-color: #4f4b54;  } /* for block quotes */
 
-/* custom abx */
-.asmy {
-  color: #ffd400;  /* bright readable yellow on black */
-  font-weight: bold;
-}

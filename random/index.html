@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>tmp.0ut</title>
+<meta charset="utf-8">
+<link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="txtdiv"><pre>
+
+###########################################################################
+# [ 1 ]  Delete all commit history in GitHub
+###########################################################################
+
+# main branch
+git checkout --orphan latest_branch
+git add .
+git commit -m "commit message"
+git branch -D main OR 
+git branch -m main
+git push -f origin main
+
+# master branch
+git checkout --orphan latest_branch
+git add .
+git commit -m "commit message"
+git branch -D master
+git branch -m master
+git push -f origin master
+
+###########################################################################
+# [ 2 ]  Calculate hash in cmd (certUtil)
+###########################################################################
+
+certUtil -hashfile C:\Windows\System32\ntdll.dll SHA256
+certUtil -hashfile C:\Windows\System32\ntdll.dll SHA1
+certUtil -hashfile C:\Windows\System32\ntdll.dll MD5
+
+###########################################################################
+# [ 3 ]  Git clone .git redundant push
+###########################################################################
+
+git clone <repo>
+cd <repo>
+rm -rf .git 
+cd ..
+git rm --cached <repo>
+OR git rm --cached *
+git add . && git commit -m "$(date)" && git branch -M main && git push -u origin main
+
+###########################################################################
+# [ ? ]  Random shits
+###########################################################################
+
+Hosts Windows: C:\Windows\System32\drivers\etc\hosts
+
+</pre></body></html>
