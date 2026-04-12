@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>tmp.0ut</title>
+<title>VX-ABX</title>
 <meta charset="utf-8">
 <link href="./style.css" rel="stylesheet" type="text/css">
 </head>
@@ -8,9 +8,9 @@
 <body>
 <div class="txtdiv"><pre>
 
-###########################################################################
+################################################
 # [ 1 ]  Delete all commit history in GitHub
-###########################################################################
+################################################
 
 # main branch
 git checkout --orphan latest_branch
@@ -28,17 +28,17 @@ git branch -D master
 git branch -m master
 git push -f origin master
 
-###########################################################################
+################################################
 # [ 2 ]  Calculate hash in cmd (certUtil)
-###########################################################################
+################################################
 
 certUtil -hashfile C:\Windows\System32\ntdll.dll SHA256
 certUtil -hashfile C:\Windows\System32\ntdll.dll SHA1
 certUtil -hashfile C:\Windows\System32\ntdll.dll MD5
 
-###########################################################################
+################################################
 # [ 3 ]  Git clone .git redundant push
-###########################################################################
+################################################
 
 git clone <repo>
 cd <repo>
@@ -47,6 +47,51 @@ cd ..
 git rm --cached <repo>
 OR git rm --cached *
 git add . && git commit -m "$(date)" && git branch -M main && git push -u origin main
+
+################################################
+# Ubuntu Sublime (APT)
+################################################
+
+sudo apt update
+sudo apt install wget gpg
+sudo mkdir -p /etc/apt/keyrings
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo tee /etc/apt/keyrings/sublimehq-pub.asc > /dev/null
+
+(Stable) echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable/\nSigned-By: /etc/apt/keyrings/sublimehq-pub.asc' | sudo tee /etc/apt/sources.list.d/sublime-text.sources
+
+sudo apt-get update <- dont ask
+sudo apt-get install sublime-text
+subl
+
+
+*If Error:
+
+[!] Read the error.
+
+E: Failed to fetch http://download.draios.com/stable/deb/stable-amd64/InRelease 403 Forbidden [IP:
+E: The repository 'http://download.draios.com/stable/deb stable-amd64/ InRelease' is no longer signed.
+....
+
+*Fix:
+
+grep -r "draios" /etc/apt/
+Expected output: /etc/apt/sources.list.d/draios.list
+sudo rm /etc/apt/sources.list.d/draios.list
+sudo apt update
+
+# Auto save change tab file =
+(usermode)
+Preferences → Settings 
+add this code (right view) =
+
+{
+    "save_on_focus_lost": true
+}
+
+save exit.
+
+
+Reference: https://www.sublimetext.com/docs/linux_repositories.html
 
 ###########################################################################
 # [ ? ]  Random shits
