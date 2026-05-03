@@ -41,3 +41,8 @@ pre {
   color: #ffd400;  /* bright readable yellow on black */
   font-weight: bold;
 }
+
+h1 {
+  font-family: Arial;
+	color: #ceffbd;
+}

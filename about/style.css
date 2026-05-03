@@ -1,0 +1,122 @@
+body {
+	/*color: #e9e9e9; */
+	color: #f6deff;
+	background-color: #0f0a14;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("static-purple.gif");
+  font-family: Arial;
+  margin: 0 auto;
+  padding: 1em 0 1em 0;
+}
+a { 
+  color: #93ffd7; 
+  text-decoration: none; 
+}
+@font-face { 
+  font-family: "unifont"; 
+  src: url("./unifont.woff") format('woff'); 
+}
+pre { 
+  font-family: "unifont", "Lucida Console", monospace, Monaco; 
+  font-size:16px; 
+  line-height: 1.0;
+  padding-left: 20px;
+}
+.txtdiv {
+  display: block;
+  text-align: left;
+}
+x { color: #93f1ff; } /* blue - complimentary to <a> tag for highlighting */
+hl { color: white; background-color: #4f4b54;  } /* for block quotes */
+
+/* custom abx */
+.asmy {
+  color: #ffd400;  /* bright readable yellow on black */
+  font-weight: bold;
+}
+
+/* added custom stuff */
+/* =========================*/
+
+
+a  { 
+	font-weight: bold; 
+	color: #bdffee; 
+	text-decoration: none; 
+}
+
+span {
+	font-family:unifont,lucida console,monospace,Monaco;
+	font-size:16px;
+	line-height:1;
+}
+
+/* These are like markdown > quotes */
+blockquote {
+	/*background-color: #333333;*/
+	color: #BBBBBB;
+}
+
+.highlight {
+	overflow: scroll;
+	border-style: solid;
+	border-color: #524b66;
+	border-radius: 8px;
+	background-color: #1c1d25 !important;
+	padding-left:  16px;
+	padding-right: 16px;
+}
+
+.highlight pre {
+	/*background-color: #282a36 / 0.7 !important; /* 70% opacity ? */
+	line-height:1;
+}
+
+code {
+	font-family:unifont,lucida console,monospace,Monaco;
+	font-size:16px;
+	line-height:1;
+	color: #a4cc97;
+}
+
+
+/* Headings */
+h1 {
+  font-family: Arial;
+	color: #ceffbd;
+}
+
+h2 {
+	color: #ffeebd;
+}
+
+h3 {
+	color: #eebdff;
+}
+
+h4 {
+	color: #cdbdff;
+}
+
+strong {
+	color: red; /* This is because Unifont bold isn't that bright */
+}
+
+c { color:#bdffcd; } /* This is a nice green if you need */
+
+/* Tables */
+
+table td, table td * {
+    vertical-align: top;
+}
+table, th, td {
+  border: 1px solid;
+  border-color: #ffbdef;
+  border-collapse: collapse;
+  text-align: left;
+
+}
+
+th {
+	background-color: #ffbdef;
+	color: #0f0a14; 
+}
