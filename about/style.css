@@ -120,3 +120,16 @@ th {
 	background-color: #ffbdef;
 	color: #0f0a14; 
 }
+
+.spoiler, .spoiler2, .spoiler a, .spoiler2 a{ 
+  color: black; 
+  background-color: black;
+}
+
+.spoiler:hover, .spoiler:hover a {
+  color: white;
+}
+
+.spoiler2:hover, .spoiler2:hover a { 
+ background-color:white; 
+}
