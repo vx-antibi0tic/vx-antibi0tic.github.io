@@ -133,3 +133,11 @@ th {
 .spoiler2:hover, .spoiler2:hover a { 
  background-color:white; 
 }
+
+g { color:#bdffcd; } /* This is a nice green if you need */
+w { color: white;   }
+p { color: #ff87ff; } /* pink   */
+o { color: #87ffff; } /* blue   */
+y { color: #ffff00; } /* yellow */
+e { color: #93ffd7; } /* green  */
+r { color: #fa4d57; } /* red    */
