@@ -54,6 +54,12 @@ pre {
     max-width: 60vw;
 }
 
+@media (max-width: 768px) {
+    .txtdiv {
+        max-width: 100vw;
+    }
+}
+
 .txtdiv pre {
     white-space: pre-wrap;
     overflow-wrap: break-word;
