@@ -1,0 +1,483 @@
+/* ==========================================================================
+   vx-antibi0tic — infosec blog
+   Theme: dark, mono-first, scarlet accent (vx-antibi0tic style)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens
+   -------------------------------------------------------------------------- */
+:root {
+    /* Core palette */
+    --primary-color: #d73a4a;   /* scarlet accent */
+    --secondary-color: #9d4edd; /* hover purple */
+    --text-color: #e3e6f1;
+    --text-light: #9aa4c2;
+    --background: #0f121b;
+    --background-alt: #141927;
+    --border-color: #1d2233;
+    --hover-color: #1a2031;
+
+    /* Mono-first design tokens */
+    --m-bg: var(--background);
+    --m-bg-elev: var(--background-alt);
+    --m-fg: #d6d3cc;
+    --m-fg-dim: #8a8780;
+    --m-fg-mute: #5a5852;
+    --m-rule: #26252a;
+    --m-rule-strong: #3a3833;
+    --m-accent: var(--primary-color);
+    --m-accent-soft: rgba(215, 58, 74, 0.12);
+
+    /* Typography */
+    --m-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --m-sans: 'Inter', -apple-system, system-ui, 'Segoe UI', sans-serif;
+
+    /* Layout */
+    --m-col: 720px;
+    --m-pad: 24px;
+
+    /* Effects */
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --transition: all 0.3s ease;
+    --gradient-start: #0a0c14;
+    --gradient-end: #0f1422;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base
+   -------------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: var(--m-sans);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-attachment: fixed;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+    min-height: 100vh;
+}
+
+a { color: var(--m-accent); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--secondary-color); }
+
+/* --------------------------------------------------------------------------
+   3. Fixed header
+   -------------------------------------------------------------------------- */
+.m-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(15, 18, 27, 0.78);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 0;
+    font-family: var(--m-mono);
+    font-size: 13px;
+}
+
+.m-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.m-header a { text-decoration: none; }
+
+.m-brand {
+    color: var(--m-accent) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-family: var(--m-mono);
+}
+.m-brand::before { content: '▌ '; color: var(--m-accent); }
+.m-brand:hover { transform: none; }
+
+.m-nav { display: flex; gap: 18px; flex-wrap: wrap; }
+
+.m-nav a {
+    color: var(--text-light) !important;
+    border-bottom: 1px solid transparent;
+}
+.m-nav a:hover { color: var(--text-color) !important; }
+
+.m-nav a.m-nav-current {
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--m-accent) !important;
+    padding-bottom: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Post index (table)
+   -------------------------------------------------------------------------- */
+.post-index {
+    max-width: 1280px;
+    margin: 48px auto 64px;
+    padding: 0 24px;
+}
+
+.posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.posts-table thead th {
+    text-align: left;
+    color: var(--text-light);
+    font-weight: 400;
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.posts-table tbody td {
+    padding: 0.5rem 0.75rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--m-rule);
+}
+
+.posts-table tbody tr { transition: background-color 0.15s ease; }
+.posts-table tbody tr:hover { background-color: rgba(138, 173, 244, 0.1); }
+
+.posts-table .col-date { width: 9%; white-space: nowrap; color: var(--text-light); font-family: var(--m-mono); font-size: 0.8rem; }
+.posts-table .col-title { width: 30%; }
+.posts-table .col-desc { color: var(--text-light); font-size: 0.85rem; }
+
+/* Post title link — scarlet, slides on hover */
+.blog-title {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.blog-title:hover {
+    color: var(--secondary-color);
+    transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   5. Post page
+   -------------------------------------------------------------------------- */
+.post-page {
+    max-width: 1180px;
+    margin: 48px auto 64px;
+    padding: 0 24px;
+}
+
+.post-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.post-page article {
+    flex: 1 1 auto;
+    min-width: 0;
+    background: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 40px 48px;
+    box-shadow: var(--card-shadow);
+}
+
+/* right-side table of contents */
+.post-toc {
+    flex: 0 0 230px;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: var(--background-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 18px 16px;
+    box-shadow: var(--card-shadow);
+}
+.toc-title {
+    font-family: var(--m-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+.toc-nav { display: block; }
+.toc-link {
+    display: block;
+    font-family: var(--m-mono);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-left: 2px solid transparent;
+    border-radius: 0 4px 4px 0;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    word-break: break-word;
+}
+.toc-link.toc-h3 { padding-left: 22px; font-size: 0.74rem; }
+.toc-link:hover { color: var(--text-color); background: rgba(255,255,255,0.04); }
+.toc-link.active {
+    color: var(--accent, #7aa2f7);
+    border-left-color: var(--accent, #7aa2f7);
+    background: rgba(255,255,255,0.05);
+}
+
+.post-page h1 {
+    font-family: var(--m-mono);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+
+.post-meta {
+    color: var(--text-light);
+    font-family: var(--m-mono);
+    font-size: 0.8rem;
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-body { font-size: 1rem; }
+.post-body p { margin: 0 0 1.1em; }
+.post-body h2 {
+    font-family: var(--m-mono);
+    font-size: 1.2rem;
+    margin: 1.8em 0 0.6em;
+    color: var(--text-color);
+}
+.post-body ul, .post-body ol { margin: 0 0 1.1em; padding-left: 1.4em; }
+.post-body li { margin: 0.3em 0; }
+.post-body code {
+    font-family: var(--m-mono);
+    font-size: 0.85em;
+    background: #0b0e17;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+}
+.post-body pre {
+    background: #0b0e17;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+.post-body pre code { background: none; border: none; padding: 0; }
+
+/* Code blocks with syntax highlighting (highlight.js, github-dark) */
+.post-body pre code.hljs {
+    background: none;
+    padding: 0;
+    color: var(--text-color);
+    font-family: var(--m-mono);
+}
+
+/* Images in posts */
+.post-body .post-image {
+    margin: 1.4em 0;
+    text-align: center;
+}
+.post-body .post-image img,
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #0b0e17;
+}
+.post-body .post-image figcaption {
+    margin-top: 0.5em;
+    font-family: var(--m-mono);
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 28px;
+    font-family: var(--m-mono);
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+.back-link:hover { color: var(--m-accent); }
+
+/* --------------------------------------------------------------------------
+   6. About / mono pages (terminal card)
+   -------------------------------------------------------------------------- */
+body.m-page {
+    background: var(--m-bg);
+    color: var(--m-fg);
+    font-family: var(--m-mono);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.m-page-shell {
+    max-width: var(--m-col);
+    margin: 0 auto;
+    padding: 110px var(--m-pad) 96px;
+}
+
+.m-card {
+    max-width: var(--m-col);
+    margin: 0 auto;
+    border: 1px solid var(--m-rule-strong);
+    border-radius: 6px;
+    background: var(--m-bg-elev);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+/* Terminal title bar with traffic-light dots */
+.m-card-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #1c1b21;
+    border-bottom: 1px solid var(--m-rule-strong);
+}
+.m-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--m-rule-strong);
+    display: inline-block;
+}
+.m-dot-r { background: var(--m-accent); }
+.m-card-title {
+    margin-left: 10px;
+    font-family: var(--m-mono);
+    font-size: 12px;
+    color: var(--m-fg-mute);
+}
+
+.m-card-body { padding: 28px 32px 32px; }
+
+.m-h1-terminal {
+    font-family: var(--m-mono);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--m-fg);
+    margin: 0 0 14px;
+    border: 0;
+    padding: 0;
+}
+.m-prompt { color: var(--m-accent) !important; margin-right: 10px; }
+
+.m-body {
+    font-family: var(--m-sans);
+    font-size: 14px;
+    color: var(--m-fg-dim);
+    line-height: 1.7;
+    margin: 0 0 14px;
+}
+
+.m-section-label {
+    font-family: var(--m-mono);
+    font-size: 11px;
+    color: var(--m-fg-mute);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 24px 0 8px;
+}
+
+.m-fact {
+    margin: 2px 0;
+    color: var(--m-fg-dim);
+    font-family: var(--m-sans);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.m-talks { list-style: none; padding: 0; margin: 0 0 18px; }
+.m-talks li { margin: 6px 0; }
+.m-talks .m-meta {
+    display: block;
+    font-size: 11px;
+    color: var(--m-fg-mute);
+    font-family: var(--m-mono);
+}
+
+/* --------------------------------------------------------------------------
+   7. Terminal block (m-term) — used inside posts
+   -------------------------------------------------------------------------- */
+.m-term {
+    display: block;
+    margin: 28px 0;
+    padding: 18px 22px;
+    background: var(--m-bg-elev);
+    border: 1px solid var(--m-rule-strong);
+    border-left: 2px solid var(--m-accent);
+    border-radius: 3px;
+    font-family: var(--m-mono);
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--m-fg);
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+.m-term .m-term-prompt {
+    color: var(--m-accent) !important;
+    margin-right: 10px;
+    font-weight: 600;
+}
+.m-term .m-term-comment {
+    color: var(--m-fg-mute) !important;
+    font-style: italic;
+}
+.m-term a { color: var(--m-accent) !important; }
+.m-term a:hover { color: var(--secondary-color) !important; }
+
+/* --------------------------------------------------------------------------
+   8. Footer
+   -------------------------------------------------------------------------- */
+.m-footer {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    font-family: var(--m-mono);
+    font-size: 11px;
+    color: var(--m-fg-mute);
+    text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .m-header { padding: 10px 0; }
+    .m-header-inner { padding: 0 16px; gap: 8px; }
+    .m-nav { gap: 12px; font-size: 12px; }
+
+    .posts-table .col-desc { display: none; }
+    .posts-table .col-date { width: 14%; }
+    .posts-table .col-title { width: 86%; }
+
+    .post-page article { padding: 24px 20px; }
+    .post-layout { flex-direction: column-reverse; gap: 18px; }
+    .post-toc { position: static; width: 100%; flex: none; max-height: none; }
+    .m-card-body { padding: 20px 18px 22px; }
+}
