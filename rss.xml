@@ -6,8 +6,15 @@
         <atom:link href="https://vx-antibi0tic.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <description>vx-antibi0tic's infosec blog</description>
         <language>en-us</language>
-        <lastBuildDate>Sat, 08 Aug 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate>
 
+        <item>
+            <title>Freeware Software (Announcement)</title>
+            <link>https://vx-antibi0tic.github.io/posts/Freeware-Software/</link>
+            <guid>https://vx-antibi0tic.github.io/posts/Freeware-Software/</guid>
+            <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+            <description>Free software created to benefit the community and support those who may find it useful.</description>
+        </item>
         <item>
             <title>EXP-301: Windows Exploit Development OSED Review (2026)</title>
             <link>https://vx-antibi0tic.github.io/posts/EXP-301-OSED-Offsec-Review-2026/</link>

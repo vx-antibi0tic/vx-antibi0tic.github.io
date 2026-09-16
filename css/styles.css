@@ -1,6 +1,6 @@
 /* ==========================================================================
-   vx-antibi0tic — infosec blog
-   Theme: dark, mono-first, scarlet accent (vx-antibi0tic style)
+   faz — infosec blog
+   Theme: dark, mono-first, scarlet accent (mez0.cc style)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -294,6 +294,66 @@ a:hover { color: var(--secondary-color); }
     color: var(--text-color);
     font-family: var(--m-mono);
 }
+
+/* Tables in posts */
+.post-body .table-wrap {
+    margin: 1.4em 0;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+.post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+.post-body th,
+.post-body td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--m-rule);
+    text-align: left;
+    vertical-align: top;
+    word-break: break-word;
+}
+.post-body thead th {
+    font-family: var(--m-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-light);
+    background: #0b0e17;
+    border-bottom: 1px solid var(--border-color);
+}
+.post-body tbody tr:last-child td { border-bottom: none; }
+.post-body tbody tr:hover { background-color: rgba(138, 173, 244, 0.06); }
+.post-body th.ta-center, .post-body td.ta-center { text-align: center; }
+.post-body th.ta-right,  .post-body td.ta-right  { text-align: right; }
+
+/* Horizontal rule */
+.post-body hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 2em 0;
+}
+
+/* Blockquote */
+.post-body blockquote {
+    margin: 1.4em 0;
+    padding: 10px 18px;
+    border-left: 2px solid var(--m-accent);
+    background: rgba(215, 58, 74, 0.05);
+    border-radius: 0 6px 6px 0;
+    color: var(--text-light);
+}
+.post-body blockquote p { margin: 0; }
+
+/* Task lists */
+.post-body li.task { list-style: none; margin-left: -1.25em; }
+.post-body li.task input[type="checkbox"] {
+    margin-right: 0.5em;
+    accent-color: var(--primary-color);
+    vertical-align: middle;
+}
+.post-body li.task.done { color: var(--text-light); }
 
 /* Images in posts */
 .post-body .post-image {
