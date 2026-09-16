@@ -4,7 +4,7 @@ date: 17-09-2026
 description: Free software created to benefit the community and support those who may find it useful.
 ---
 
-| Freeware Software Product | Description |
+| Software Projects | Description |
 |---|---|
 | [VTDL](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware) | A GUI tool designed for users who want easy access to VirusTotal functionality. This tool focuses specifically on download capabilities. |
 
