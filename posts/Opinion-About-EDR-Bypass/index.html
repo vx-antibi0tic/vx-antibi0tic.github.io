@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reality Behind Overclaimed EDR Bypass Posts (Opinion) — vx-antibi0tic</title>
+    <meta name="description" content="This blog explains why exaggerating EDR bypass claims can mislead new joinees and create unrealistic expectations about cybersecurity.">
+    <meta name="author" content="vx-antibi0tic">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Code syntax highlighting (highlight.js, github-dark theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+    <!-- Fixed header -->
+    <header class="m-header">
+        <div class="m-header-inner">
+            <a href="/" class="m-brand">vx-antibi0tic</a>
+            <nav class="m-nav">
+                <a href="/about/">about</a>
+                <a href="/" class="m-nav-current">posts</a>
+                <a href="/rss.xml">rss</a>
+                <a href="https://github.com/vx-antibi0tic" target="_blank" rel="noopener">github</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="post-page">
+        <div class="post-layout">
+            <article>
+                <h1>Reality Behind Overclaimed EDR Bypass Posts (Opinion)</h1>
+                <p class="post-meta">09-09-2026</p>
+
+                <div class="post-body">
+                <blockquote><p>These are my personal opinions and do not represent the views of my employer.</p></blockquote>
+                <p>Well recently I just saw posts that exaggerating about bypassing EDR, I did notice this a lot lately. I just assumed people were doing some Maldev course copy pastes. Most people who attend these courses, do not have intention to learn. They just want a tool which executes something and shows them its evaded the EDR.</p>
+                <p>This often leads to exaggerated posts and blog content that sounds highly technical in some parts but reveals a limited understanding of the subject. The difference becomes especially noticeable when the writing shifts from modest analysis to exaggerated claims generated with the help of machine learning. Some people also try to appear strong or knowledgeable, which can make others wrongly assume that experienced professionals do not understand the topic.</p>
+                <p>The problem with these posts are that, instead of actually improving skills, people focus on the fame(attention seeking) they get from these posts. While doing so, they create a trend where the new joinees only think this is cool, and dont end up learning anything. Its just sad.</p>
+                <p>As I remember from old posts back in the day, brc4 Author has posted opinions regarding EDR bypass:</p>
+                <p>&quot; Watching people tweet they bypassed a certain EDR is just cringe at this point. When you ask them what did they bypass, they dont know what. So let me take you back to school…</p>
+                <p>Executing OpenSource tool is not a bypass. An EDR employs several mechanisms for detection. Getting a new implant for a twitter image is not evasion. To have a proper bypass, several conditions must be met. Lets see…</p>
+                <p>When you say you bypassed an EDR, what did you pass? Initial connection? Post-ex? Userland unhooking of DLLs? DLL callbacks? Exception handlers? Kernel hooks? Userland ETW or Kernel ETW? Yaras? If you didnt test any of this, how do you know that you bypassed it. I know EDRs which simply allow connection and monitor it to gather more intel on threats, but will kill the implant upon interaction with local env. The implant must be executed in the form of an initial access like an actual RT/TA would do. All EDR functionalities must be enabled including internet for ML anomalies Did you interact with the implant after getting a shell? Most EDRs will kill you on the moment of interaction with local files or processes due to call-stack scanning. Does your implant leave “shouting traces” of “I exist” in memory which can be traced with a simple process monitor with a memory dump? Most importantly, have you ever reversed the EDR or its modules to understand what exactly is happening in the back end? Do you even know “WHAT” is actually being detected by the EDR? &quot;</p>
+                <p>Reflecting on these posts, EDR bypass should be understood in this context, and people really need to stop dissing Blue Team nerds. If you’ve ever tried to deploy artefact against an enterprise network with an active Blue Team with software restriction policies, path-based execution restriction, a team that has an effective and up-to-date EDR (custom detection rules) coupled with an AV, and an active SOC….. it can be extremely challenging.</p>
+                <p>These Blue Team nerds are not dummies and they take their job extremely seriously.</p>
+                    <a class="back-link" href="/">&larr; all posts</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="m-footer">
+        <span>Disclaimer: This site is for educational and research purposes only. The author of this site is not responsible for any damages or harm you may suffer by accessing this website or using any information contained herein. The author of this site doesn’t hold any responsibility over the misuse of the software, malware, exploits or security findings contained herein and does not condone them whatsoever. Moreover, the author of the site prohibits any malicious misuse of security informations contained and found here or elsewhere. By continuing to access this website you are agreeing to the full disclaimer presented here and you accept full liability and responsibility. Do not attempt to download Malware samples. The author of this website takes no responsibility for any kind of damages occurring from improper Malware handling or the downloading of ANY Malware mentioned on this website or elsewhere.</span><br><br>
+        <span>&copy; 2026 vx-antibi0tic &middot; Malware</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- languages not in the default build -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/powershell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/x86asm.min.js"></script>
+    <script>
+      hljs.highlightAll();
+      // TOC scroll-spy: highlight the section currently in view
+      (function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.toc-link'));
+        if (!links.length) return;
+        var map = {};
+        links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+        var targets = links.map(function (a) {
+          return document.getElementById(a.getAttribute('href').slice(1));
+        }).filter(Boolean);
+        if (!targets.length) return;
+        function setActive(id) {
+          links.forEach(function (a) { a.classList.remove('active'); });
+          if (map[id]) map[id].classList.add('active');
+        }
+        var OFFSET = 120; // px below viewport top a heading counts as "current"
+        var ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            ticking = false;
+            var current = targets[0];
+            for (var i = 0; i < targets.length; i++) {
+              if (targets[i].getBoundingClientRect().top - OFFSET <= 0) current = targets[i];
+              else break;
+            }
+            // at the very bottom of the page, force the last section active
+            if (window.innerHeight + window.scrollY >=
+                document.documentElement.scrollHeight - 4) {
+              current = targets[targets.length - 1];
+            }
+            setActive(current.id);
+          });
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        onScroll();
+      })();
+    </script>
+</body>
+</html>
