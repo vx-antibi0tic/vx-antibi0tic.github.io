@@ -9,8 +9,6 @@ description: Free software created to benefit the community and support those wh
 | [MalTag](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware) | A tool designed for users who want to label malware with signatures for free! |
 | [VTDL](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware) | A GUI tool designed for users who want easy access to VirusTotal functionality. This tool focuses specifically on download capabilities. |
 
-![Visitors Page Total](https://img.shields.io/github/downloads/vx-antibi0tic/Freeware-Software/total?style=for-the-badge&logo=github)
-
 ## Screenshots Software
 
 > **Note:** All screenshots in this README are examples only. The program may be updated from time to time, so the screenshots shown here may differ from the current version as the software continues to improve.
