@@ -35,6 +35,8 @@ When you run it against a files containing malware, the output result will look 
 
 And with this result, it will automatically rename the file you just dropped.
 
+Credit: Smelly Smellington, Kamil Alta(alternat0r)
+
 ![](https://github.com/user-attachments/assets/64a844a7-8c5a-45fc-8c8d-e49b9b920d62)
 
 [→ Download Software Now](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware)
@@ -51,9 +53,9 @@ A GUI tool designed for users who want easy access to **VirusTotal functionality
 
 I created this tool because I found the command-line interface tedious for regular use. While there are various ways to integrate VirusTotal across different platforms, I believe a **portable approach** offers the best user experience.
 
-![](https://github.com/user-attachments/assets/c39b5e28-7ebc-416e-8f06-47c2d246e528)
-
 Credit: Kamil Alta(alternat0r) 
+
+![](https://github.com/user-attachments/assets/c39b5e28-7ebc-416e-8f06-47c2d246e528)
 
 [→ Download Software Now](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware)
 
