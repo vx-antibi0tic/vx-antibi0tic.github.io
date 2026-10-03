@@ -37,8 +37,6 @@ And with this result, it will automatically rename the file you just dropped.
 
 ![](https://github.com/user-attachments/assets/64a844a7-8c5a-45fc-8c8d-e49b9b920d62)
 
-Credit: smelly, Kamil Alta(alternat0r)
-
 [→ Download Software Now](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware)
 
 ---
@@ -55,7 +53,7 @@ I created this tool because I found the command-line interface tedious for regul
 
 ![](https://github.com/user-attachments/assets/c39b5e28-7ebc-416e-8f06-47c2d246e528)
 
-Credit: Kamil Alta(alternat0r)
+Credit: Kamil Alta(alternat0r) 
 
 [→ Download Software Now](https://github.com/vx-antibi0tic/Freeware-Software/releases/tag/Freeware)
 
